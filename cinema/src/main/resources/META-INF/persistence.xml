@@ -7,7 +7,7 @@
         <properties>
             <property name="hibernate.dialect" value="${database.hibernate.dialect.class}"/>
             <property name="hibernate.max_fetch_depth" value="3"/>
-            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
             <property name="hibernate.query.substitutions" value="true 1, false 0"/>
             <property name="hibernate.jdbc.fetch_size" value="3"/>
         </properties>
