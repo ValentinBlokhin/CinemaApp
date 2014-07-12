@@ -1,6 +1,6 @@
 package com.cinema.dao;
 
-import com.cinema.model.Film;
+import com.cinema.model.persistence.Film;
 import org.springframework.data.repository.CrudRepository;
 
 /**

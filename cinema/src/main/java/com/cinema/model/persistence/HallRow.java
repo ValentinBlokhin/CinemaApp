@@ -1,4 +1,4 @@
-package com.cinema.model;
+package com.cinema.model.persistence;
 
 import javax.persistence.*;
 import java.io.Serializable;

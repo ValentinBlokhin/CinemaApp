@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - @localhost" uuid="65901223-c981-4377-876b-e61cddcb9504">
+    <database-info product="MySQL" version="5.6.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="cinema"/>
+    <table name="cinemasession" schema="" catalog="cinema" type="TABLE">
+      <column name="idCinemaSession" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idSeat" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idFilm" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sessionDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="sessionTime" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="idCinemaSession"/>
+      <foreign-key name="fk_CinemaSession_Film1" columns="idFilm" ref-table="film" ref-schema="" ref-catalog="cinema" ref-columns="idFilm" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_CinemaSession_Seat1" columns="idSeat" ref-table="seat" ref-schema="" ref-catalog="cinema" ref-columns="idSeat" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_Ticket_CinemaSession1" table="ticket" schema="" catalog="cinema" columns="idCinemaSession"/>
+      <index name="fk_CinemaSession_Film1_idx" unique="false" columns="idFilm"/>
+      <index name="fk_CinemaSession_Seat1_idx" unique="false" columns="idSeat"/>
+    </table>
+    <table name="film" schema="" catalog="cinema" type="TABLE">
+      <column name="idFilm" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="poster" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4"/>
+      <primary-key name="PRIMARY" columns="idFilm"/>
+      <exported-key name="fk_CinemaSession_Film1" table="cinemasession" schema="" catalog="cinema" columns="idFilm"/>
+    </table>
+    <table name="hall" schema="" catalog="cinema" type="TABLE">
+      <column name="idHall" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="countofRows" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idHall"/>
+      <exported-key name="fk_Row_Hall" table="hallrow" schema="" catalog="cinema" columns="idHall"/>
+    </table>
+    <table name="hallrow" schema="" catalog="cinema" type="TABLE">
+      <column name="idHallRow" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="rowNo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="countofPlaces" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idHall" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idHallRow"/>
+      <foreign-key name="fk_Row_Hall" columns="idHall" ref-table="hall" ref-schema="" ref-catalog="cinema" ref-columns="idHall" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_Seat_Row1" table="seat" schema="" catalog="cinema" columns="idRow"/>
+      <index name="fk_Row_Hall_idx" unique="false" columns="idHall"/>
+    </table>
+    <table name="seat" schema="" catalog="cinema" type="TABLE">
+      <column name="idSeat" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="seatNo" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idRow" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idSeat"/>
+      <foreign-key name="fk_Seat_Row1" columns="idRow" ref-table="hallrow" ref-schema="" ref-catalog="cinema" ref-columns="idHallRow" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_CinemaSession_Seat1" table="cinemasession" schema="" catalog="cinema" columns="idSeat"/>
+      <index name="fk_Seat_Row1_idx" unique="false" columns="idRow"/>
+    </table>
+    <table name="ticket" schema="" catalog="cinema" type="TABLE">
+      <column name="idTicket" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idCinemaSession" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ticketZipCode" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="orderDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="idTicket"/>
+      <foreign-key name="fk_Ticket_CinemaSession1" columns="idCinemaSession" ref-table="cinemasession" ref-schema="" ref-catalog="cinema" ref-columns="idCinemaSession" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_Ticket_CinemaSession1_idx" unique="false" columns="idCinemaSession"/>
+    </table>
+  </data-source>
+</component>
