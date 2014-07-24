@@ -5,7 +5,8 @@
 <html>
 <head>
     <title></title>
-    <script src="<c:url value="/WEB-INF/css/bootstrap.css"/>"></script>
+    <link href="<c:url value="/resources/css/bootstrap.css"/>">
+    <script data-main="<c:url value="/resources/js/home.js" />" src="<c:url value="/resources/js/require.js"/> "></script>
 </head>
 <body>
 gdfgdgdfgfd
