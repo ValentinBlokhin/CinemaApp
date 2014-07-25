@@ -1,4 +1,4 @@
-//console.time("application loading");
+console.time('application loading');
 
 requirejs.config({
         paths: {
