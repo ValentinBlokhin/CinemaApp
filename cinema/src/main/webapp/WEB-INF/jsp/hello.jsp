@@ -15,6 +15,9 @@
 </head>
 <body>
 <div class="container" ng-controller="Home as home">
+    <input type="text" ng-model="home" ng-init="home = 'hello'">
+    <h1>{{home}}</h1>
+    <h1>{{home|reverseIt}}</h1>
 </div>
 stub
 </body>
