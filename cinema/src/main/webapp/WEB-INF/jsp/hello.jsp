@@ -6,9 +6,16 @@
 <head>
     <title></title>
     <link href="<c:url value="/resources/css/bootstrap.css"/>">
-    <script data-main="<c:url value="/resources/js/home.js" />" src="<c:url value="/resources/js/require.js"/> "></script>
+    <script data-main="<c:url value="/resources/js/require_config.js" />" src="<c:url value="/resources/js/require.js"/> "></script>
+    <%--<script type="application/javascript">--%>
+        <%--var require = {--%>
+            <%--baseUrl: '<spring:url value="/resources/js/"/>'--%>
+        <%--};--%>
+    <%--</script>--%>
 </head>
 <body>
-gdfgdgdfgfd
+<div class="container" ng-controller="Home as home">
+</div>
+stub
 </body>
 </html>

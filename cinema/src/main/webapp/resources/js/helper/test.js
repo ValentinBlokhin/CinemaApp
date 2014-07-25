@@ -1,3 +1,1 @@
-/**
- * Created by vblokhin on 24.07.14.
- */
+console.time("application loading");
