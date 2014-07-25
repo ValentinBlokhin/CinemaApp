@@ -1,3 +1,3 @@
-/**
- * Created by vblokhin on 25.07.14.
- */
+define([
+    './home'
+], function() {});

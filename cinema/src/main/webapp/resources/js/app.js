@@ -1,7 +1,7 @@
 define([
     'angular',
     './controllers/index',
-//    './directives/index',
+    './directives/index',
     './filters/index'
 //    './services/index'
 ], function (ng) {
@@ -10,7 +10,7 @@ define([
     return ng.module('app', [
 //        'app.services',
         'app.controllers',
-        'app.filters'
-//        'app.directives'
+        'app.filters',
+        'app.directives'
     ]);
 });
