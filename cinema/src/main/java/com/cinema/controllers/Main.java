@@ -2,6 +2,7 @@ package com.cinema.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created on 24.07.14.
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Main {
 
     @RequestMapping({"/", "/home"})
-    public String showHome() {
-        return "hello";
+    public ModelAndView showHome() {
+        return new ModelAndView("main");
     }
 }

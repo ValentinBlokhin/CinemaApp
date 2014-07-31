@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 90%;
+    background-color: #192d50;
+}
+
+.main{
+
+}
+
+.header{
+    background-color: #030b15;
+}
+
+.logo{
+
+}
+
+.menu{
+}
+
+.menu > ul{
+    margin:  0;
+    list-style: none;
+}
+
+.menu > ul > li{
+    display: inline-block;
+}
+
+.menu .item{
+    padding: 20px;
+}
+
+.item > a, .button_enter > a, .button_registration > a{
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 90%;
+    text-decoration: none;
+}
+
+.item > a{
+    color: #aeb2b5;
+}
+
+.button_enter > a, .button_registration > a{
+    color: #01122e;
+}
+
+.item:hover{
+    background-color: #4f6073;
+}
+
+.item > a:hover{
+    color: #dfceba;
+}
+
+.menu .item_search{
+     margin-left: 50px;
+}
+
+.search{
+    border: none;
+    padding: 8px;
+    width: 200px;
+}
+
+.button_enter{
+    margin-left: 20px;
+    width: 85%;
+    background-color: #c4e561;
+}
+
+.button_registration{
+    margin-left: 15px;
+    width: 120%;
+    background-color: #ace7b6;
+}
+
+.button_enter, .button_registration{
+    padding: 8px;
+    border: none;
+}
+
+.content{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 70px;
+}
+
+.slogan{
+    color: #f7f6f7;
+    border-bottom: 1px groove #acabab;
+}
+
+.slogan > h1, .slogan > h2, .information > h2{
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.slogan > h1 > strong, .slogan > h2 > strong{
+    color: #dfceba;
+}
+
+.affiche{
+    margin-top: 50px;
+}
+
+.film_information{
+    border: 1px groove #000000;
+    border-radius: 7px;
+    height: 220px;
+    padding: 30px 30px 14px 15px;
+    width: 800px;
+}
+
+.film_information .poster{
+    float: left;
+    background-color: #e8f0f6;
+}
+
+.film_information .poster > img{
+    padding: 5px;
+}
+
+.film_information .information{
+    margin-left: 200px;
+}
+
+.information > h2{
+    margin: 0;
+}
+
+.information > h2 > a{
+    color: #c4e561;
+}
+
+.information > p{
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 95%;
+    color: #f7f6f7;
+}
