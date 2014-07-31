@@ -14,4 +14,14 @@ public class Main {
     public ModelAndView showHome() {
         return new ModelAndView("main");
     }
+
+    @RequestMapping({"app"})
+    public String showApp() {
+        return "app";
+    }
+
+    @RequestMapping({"second"})
+    public String showSecond() {
+        return "second";
+    }
 }

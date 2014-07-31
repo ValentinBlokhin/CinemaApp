@@ -6,21 +6,25 @@
 <head>
     <title></title>
     <link href="<c:url value="/resources/css/bootstrap.css"/>">
-    <script data-main="<c:url value="/resources/js/require_config.js" />" src="<c:url value="/resources/js/require.js"/> "></script>
-    <%--<script type="application/javascript">--%>
-        <%--var require = {--%>
-            <%--baseUrl: '<spring:url value="/resources/js/"/>'--%>
-        <%--};--%>
-    <%--</script>--%>
+    <script src="<c:url value="/resources/js/require.js"/> "></script>
+    <script type="application/javascript">
+        <%@include file="/resources/js/require_config.js"%>
+        require(['require'], function(require) {
+            require(["./bootstrap-main"]);
+        });
+    </script>
 </head>
 <body>
 <div class="container" ng-controller="Home as home">
-    <input type="text" ng-model="home" ng-init="home = 'hello'">
-    <h1>{{home}}</h1>
-    <h1>{{home|reverseIt}}</h1>
 
-    <div enter>content</div>
+    <div class="col-lg-12">
+        <button class="btn btn-primary" ng-click="parserModel.pageNumber | randomNumber; getOneQuoter(parserModel.pageNumber)">Get random</button>
+        <input type="number" ng-model="parserModel.pageNumber">
+        <button class="btn btn-primary" ng-click="getOneQuoter(parserModel.pageNumber)">Next</button>
+    </div>
+
+        <pre>{{parserModel.text | reverseIt}}</pre>
+
 </div>
-stub
 </body>
 </html>

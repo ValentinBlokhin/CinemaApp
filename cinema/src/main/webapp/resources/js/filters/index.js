@@ -1,3 +1,4 @@
 define([
-    './textFilters'
+    './textFilters',
+    './randomGenerator'
 ], function () {});

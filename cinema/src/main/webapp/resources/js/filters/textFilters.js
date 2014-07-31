@@ -4,7 +4,9 @@ define([
 ], function(app) {
     app.filter('reverseIt', function() {
         return function(text) {
-            return text.split("").reverse().join("");
+            var a = text.split(/(\w+:)/gim);
+            var joinedString = a.join(" ");
+            return joinedString;
         }
-    })
+    });
 });
