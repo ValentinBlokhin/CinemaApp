@@ -1,15 +1,21 @@
 package com.cinema.controllers;
 
+import com.cinema.services.RestService;
+import com.google.common.base.Joiner;
 import org.jsoup.Jsoup;
+import org.jsoup.helper.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Created on 31.07.14.
@@ -18,18 +24,20 @@ import java.io.IOException;
 @RequestMapping("/api")
 public class RestController {
 
+    @Autowired
+    private RestService restService;
+
     @RequestMapping(value = "/quotes/{id}", produces = "text/plain;charset=UTF-8")
     @ResponseBody
     public String getQuotes(@PathVariable Integer id) {
-        try {
-            Document document = Jsoup.connect("http://bash.im/quote/" + id).get();
-            Elements element = document.select("div.text");
-            String parsedText = element.text();
-            return parsedText;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
 
+        return restService.getQuotes(id);
+
+    }
+
+    @RequestMapping(value = "/quotes/new", produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String getNews() {
+        return restService.getNews();
     }
 }

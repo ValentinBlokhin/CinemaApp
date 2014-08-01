@@ -1,9 +1,12 @@
 define(['./module', '../classes/support-object', 'restangular'], function (services, UI) {
     'use strict';
-    services.factory('BashParse',['Restangular', function (Restangular) {
+    services.factory('BashParse', ['Restangular', function (Restangular) {
         return {
-            getQuoter: function(number) {
+            getQuoter: function (number) {
                 return Restangular.one("api/quotes", number).get();
+            },
+            getNew: function () {
+                return Restangular.all("api/quotes/new").getList();
             }
 //        }.config(function(RestangularProvider) {
 //            RestangularProvider.setDefaultHeaders({
@@ -12,5 +15,6 @@ define(['./module', '../classes/support-object', 'restangular'], function (servi
 //                'Access-Control-Allow-Methods' : "'GET, POST"
 //            });
 //        });
-    }}]);
+        }
+    }]);
 });
