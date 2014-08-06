@@ -1,7 +1,7 @@
 define(['./module', 'angular', '../app', 'angular-route'], function (controllers, angular, app) {
     'use strict';
 
-    app.register.controller('Bash', ['$scope', 'BashParse', function ($scope, BashParse) {
+    app.register.controller('Bash', ['$scope', 'BashParse', function ($scope, BashParse, $stateParams) {
 
         $scope.parserModel = {
             text: [],
@@ -31,10 +31,10 @@ define(['./module', 'angular', '../app', 'angular-route'], function (controllers
                 })
         };
 
-//        $scope.getId = function () {
-//            $scope.parserModel.id = $stateParams.number;
-//            $scope.parserModel = angular.copy($scope.$parent.parserModel);
-//        }
+        $scope.getId = function () {
+            $scope.parserModel.id = $stateParams.number;
+            $scope.parserModel = angular.copy($scope.$parent.parserModel);
+        }
     }])
 
 });

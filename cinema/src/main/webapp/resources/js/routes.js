@@ -7,19 +7,18 @@ define([
     , function (app) {
         'use strict';
         return app.config(function ($stateProvider, $urlRouterProvider, $controllerProvider) {
-//            app.register = {
-//                controller: $controllerProvider.register
-//            };
+            app.register = {
+                controller: $controllerProvider.register
+            };
 
 
-            $urlRouterProvider.otherwise('bash');
+//            $urlRouterProvider.otherwise('bash');
 
             $stateProvider
                 .state('bash', {
                     views: {
-                        'test1': {
+                        'test1@': {
                             templateUrl: '/bash',
-                            url: "/",
                             resolve: {
                                 load: ['$q', '$rootScope', function ($q, $rootScope) {
                                     var deferred = $q.defer();
@@ -36,10 +35,10 @@ define([
                     }
                 })
                 .state('bash.state2', {
+                    url: "/:number",
                     views: {
                         "test2": {
-                            url: "/:number",
-//                            templateUrl: '/app',
+                            templateUrl: '/app',
                             resolve: {
                                 load: ['$q', '$rootScope', function ($q, $rootScope) {
                                     var deferred = $q.defer();

@@ -1,11 +1,6 @@
 package com.cinema.controllers;
 
 import com.cinema.services.RestService;
-import com.google.common.base.Joiner;
-import org.jsoup.Jsoup;
-import org.jsoup.helper.StringUtil;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;

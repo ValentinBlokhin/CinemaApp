@@ -32,13 +32,9 @@
 
     <div class="row">
         <div class="col-lg-12" ui-view="test1">
-
-            <div ui-view="test2"></div>
         </div>
 
         </div>
-    </div>
-
     </div>
 </body>
 </html>
