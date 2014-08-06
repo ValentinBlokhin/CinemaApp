@@ -1,5 +1,6 @@
 define([
     'angular',
+    'ui.bootstrap',
     './controllers/index',
     './directives/index',
     './filters/index',
@@ -12,9 +13,7 @@ define([
         'app.controllers',
         'app.filters',
         'app.directives',
-        'ui.router'
-    ]).config( function($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    });
+        'ui.router',
+        'ui.bootstrap'
+    ]);
 });

@@ -15,38 +15,30 @@
     </script>
 </head>
 <body>
-<div class="container" ng-controller="Home as home">
+<div class="container">
 
-    <div class="col-lg-12">
-        <button class="btn btn-primary"
-                ng-click="parserModel.pageNumber | randomNumber; getOneQuoter(parserModel.pageNumber)">Get random
-        </button>
-        <input type="number" ng-model="parserModel.pageNumber">
-        <button class="btn btn-primary" ng-click="getOneQuoter(parserModel.pageNumber)">Next</button>
-        <button class="btn btn-primary" ng-click="getNew()">get new posts</button>
+    <%--<div class="row">--%>
+                <%--<tabset justified="true">--%>
+                    <%--<tab>--%>
+                        <%--<tab-heading>--%>
+                        <%--<button ui-sref="bash">Bash</button>--%>
+                        <%--</tab-heading>--%>
+                    <%--</tab>--%>
+                    <%--<tab heading="Justified Tab 2"> Justified Content!</tab>--%>
+                <%--</tabset>--%>
+        <%--</div>--%>
 
-        <div class="row">
-            <div class="col-lg-2">
-                <table class="table table-bordered table-responsive">
-                    <thead>
-                    <tr>
-                        <td>Post number</td>
-                    </tr>
-                    </thead>
-                    <tbody ng-repeat="model in parserModel.text">
-                    <tr>
-                        <td><a ui-sref="state2({number: {{$index + 1}}})">{{model.id}}</a></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+    <button ui-sref="bash">BAFSF</button>
 
-            <div class="col-lg-9">
-                <div ui-view></div>
-            </div>
+    <div class="row">
+        <div class="col-lg-12" ui-view="test1">
+
+            <div ui-view="test2"></div>
+        </div>
+
         </div>
     </div>
 
-</div>
+    </div>
 </body>
 </html>

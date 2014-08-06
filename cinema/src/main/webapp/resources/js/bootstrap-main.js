@@ -3,7 +3,8 @@ define([
     'angular',
     'app',
     'routes',
-    'ui.router'
+    'ui.router',
+    'ui.bootstrap'
 ], function (require, ng) {
     'use strict';
 

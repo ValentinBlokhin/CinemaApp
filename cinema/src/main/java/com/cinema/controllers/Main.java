@@ -17,11 +17,26 @@ public class Main {
 
     @RequestMapping({"app"})
     public String showApp() {
-        return "app";
+        return "partial/bash.app";
     }
 
     @RequestMapping({"second"})
     public String showSecond() {
         return "second";
+    }
+
+    @RequestMapping({"comment"})
+    public String showCommentFragment() {
+        return "comment";
+    }
+
+    @RequestMapping({"banan"})
+    public String showBananFragment() {
+        return "banan";
+    }
+
+    @RequestMapping({"bash"})
+    public String showBashFragment() {
+        return "partial/bash";
     }
 }
